@@ -3,6 +3,9 @@ import { FaWhatsapp, FaInstagram, FaMapMarkerAlt, FaClock, FaPhone } from 'react
 import './Contact.css';
 
 const Contact = () => {
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '57XXXXXXXXXX';
+  const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL || 'https://instagram.com';
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +25,7 @@ const Contact = () => {
     e.preventDefault();
     // Aquí puedes agregar la lógica para enviar el formulario
     const whatsappMessage = `Hola! Me gustaría agendar una cita.%0ANombre: ${formData.name}%0AServicio: ${formData.service}%0AMensaje: ${formData.message}`;
-    window.open(`https://wa.me/573215161162?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
   };
 
   return (
@@ -58,15 +61,15 @@ const Contact = () => {
               <FaPhone className="info-icon" />
               <div>
                 <h4>Teléfono</h4>
-                <p>+57 321 516 1162</p>
+                <p>Contáctanos vía WhatsApp</p>
               </div>
             </div>
 
             <div className="social-links">
-              <a href="https://wa.me/573215161162" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp">
+              <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="social-btn whatsapp">
                 <FaWhatsapp /> WhatsApp
               </a>
-              <a href="https://www.instagram.com/beauty_studio.cam?igsh=MXBqam9yd2Zsa2h0NQ==" target="_blank" rel="noopener noreferrer" className="social-btn instagram">
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="social-btn instagram">
                 <FaInstagram /> Instagram
               </a>
             </div>

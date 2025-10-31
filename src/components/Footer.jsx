@@ -4,6 +4,8 @@ import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '57XXXXXXXXXX';
+  const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL || 'https://instagram.com';
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -23,13 +25,13 @@ const Footer = () => {
               Especialistas en cejas, pestañas y maquillaje profesional.
             </p>
             <div className="footer-social">
-              <a href="https://www.instagram.com/beauty_studio.cam?igsh=MXBqam9yd2Zsa2h0NQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <FaInstagram />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FaFacebook />
               </a>
-              <a href="https://wa.me/573215161162" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <FaWhatsapp />
               </a>
             </div>
@@ -59,7 +61,7 @@ const Footer = () => {
             <h4>Contacto</h4>
             <ul className="footer-contact">
               <li>Tuluá, Valle del Cauca</li>
-              <li>+57 321 516 1162</li>
+              <li>Contáctanos vía WhatsApp</li>
               <li>beautystudycamila@email.com</li>
               <li>Lun - Sáb: 9:00 AM - 7:00 PM</li>
             </ul>

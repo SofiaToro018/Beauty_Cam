@@ -3,8 +3,10 @@ import { FaWhatsapp } from 'react-icons/fa';
 import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '57XXXXXXXXXX';
+  
   const handleClick = () => {
-    window.open('https://wa.me/573215161162?text=Hola! Me gustaría agendar una cita.', '_blank');
+    window.open(`https://wa.me/${whatsappNumber}?text=Hola! Me gustaría agendar una cita.`, '_blank');
   };
 
   return (

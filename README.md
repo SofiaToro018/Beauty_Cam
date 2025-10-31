@@ -102,12 +102,23 @@ cd Beauty_Cam
 npm install
 ```
 
-3. **Inicia el servidor de desarrollo**:
+3. **Configura las variables de entorno**:
+   - Copia el archivo `.env.example` y renómbralo a `.env.local`
+   - Edita `.env.local` y agrega tus datos reales:
+   
+```bash
+VITE_WHATSAPP_NUMBER=573XXXXXXXXX
+VITE_INSTAGRAM_URL=https://www.instagram.com/tu_usuario
+```
+
+> **⚠️ IMPORTANTE:** El archivo `.env.local` NO se subirá a GitHub (está en .gitignore) para proteger tu información privada.
+
+4. **Inicia el servidor de desarrollo**:
 ```bash
 npm run dev
 ```
 
-4. **Abre tu navegador** en:
+5. **Abre tu navegador** en:
 ```
 http://localhost:5173
 ```
@@ -172,6 +183,8 @@ Beauty_Cam/
 ├── index.html               # HTML principal
 ├── vite.config.js          # Configuración de Vite
 ├── package.json            # Dependencias y scripts
+├── .env.example            # Plantilla de variables de entorno (se sube a Git)
+├── .env.local              # Variables de entorno reales (NO se sube a Git)
 ├── .gitignore             # Archivos ignorados por Git
 └── README.md              # Este archivo
 ```
@@ -194,21 +207,49 @@ Los colores están definidos en `src/index.css` como variables CSS:
 
 **Para cambiar colores:** Modifica estas variables en `src/index.css`
 
+### Variables de Entorno (Información Privada)
+
+Este proyecto utiliza variables de entorno para **proteger información sensible** como números de teléfono y enlaces de redes sociales.
+
+#### 📁 Archivos de configuración:
+- **`.env.example`** - Plantilla con ejemplo (SE SUBE a GitHub)
+- **`.env.local`** - Tus datos reales (NO se sube a GitHub)
+
+#### 🔒 Variables disponibles:
+
+```bash
+VITE_WHATSAPP_NUMBER=573XXXXXXXXX        # Tu número de WhatsApp (con código de país, sin +)
+VITE_INSTAGRAM_URL=https://instagram.com/tu_usuario  # URL completa de tu Instagram
+```
+
+#### ⚙️ Cómo usar:
+
+1. Copia `.env.example` y renómbralo a `.env.local`
+2. Edita `.env.local` con tus datos reales
+3. El sitio tomará automáticamente estos valores
+4. **NUNCA** subas `.env.local` a GitHub
+
+#### 🚀 Para deploy (Vercel/Netlify):
+
+Agrega las variables de entorno en el panel de configuración de tu servicio de hosting.
+
 ### Información de Contacto
 
-Para cambiar, busca y reemplaza `5732` en:
-- `src/components/WhatsAppButton.jsx`
-- `src/components/Hero.jsx`
-- `src/components/Contact.jsx`
-- `src/components/Footer.jsx`
+#### Número de WhatsApp
+Los números están configurados en el archivo `.env.local` (no visible en GitHub)
+
+Para cambiar, edita el archivo `.env.local`:
+```bash
+VITE_WHATSAPP_NUMBER=573XXXXXXXXX
+```
 
 #### Instagram
-**Actual:** [@beauty_studio.cam](https://www.instagram.com/beauty_studio.cam)
+El enlace está configurado en el archivo `.env.local` (no visible en GitHub)
 
-Para cambiar, busca y reemplaza el enlace en:
-- `src/components/Hero.jsx`
-- `src/components/Contact.jsx`
-- `src/components/Footer.jsx`
+Para cambiar, edita el archivo `.env.local`:
+```bash
+VITE_INSTAGRAM_URL=https://www.instagram.com/tu_usuario
+```
 
 ### Agregar Imágenes Reales
 
@@ -246,19 +287,31 @@ Cuando estés listo para publicar el sitio, puedes usar cualquiera de estas plat
 ### Opción 1: Vercel (Recomendado)
 1. Crea una cuenta en [Vercel](https://vercel.com)
 2. Conecta tu repositorio de GitHub
-3. Vercel detectará automáticamente que es un proyecto Vite
-4. ¡Deploy automático! 🚀
+3. **Agrega las variables de entorno** en la configuración del proyecto:
+   - `VITE_WHATSAPP_NUMBER`
+   - `VITE_INSTAGRAM_URL`
+4. Vercel detectará automáticamente que es un proyecto Vite
+5. ¡Deploy automático! 🚀
 
 ### Opción 2: Netlify
 1. Crea una cuenta en [Netlify](https://netlify.com)
-2. Arrastra la carpeta `dist` después de hacer `npm run build`
-3. O conecta tu repositorio para deploy automático
+2. Conecta tu repositorio de GitHub
+3. **Agrega las variables de entorno** en Site settings > Environment variables
+4. Deploy automático
 
 ### Opción 3: GitHub Pages
 ```bash
 npm run build
+# Configura las variables de entorno antes del build
 # Sube la carpeta dist a GitHub Pages
 ```
+
+### ⚠️ IMPORTANTE para el Deploy
+
+**Antes de hacer deploy**, asegúrate de:
+- ✅ Configurar las variables de entorno en tu servicio de hosting
+- ✅ NO incluir el archivo `.env.local` en el repositorio
+- ✅ Verificar que `.env.local` esté en `.gitignore`
 
 ### Antes del deploy, asegúrate de:
 - ✅ Todas las imágenes están optimizadas
@@ -302,6 +355,8 @@ Secciones incluidas:
 - [x] Integración con WhatsApp
 - [x] Integración con Instagram
 - [x] Responsive design
+- [x] Variables de entorno para datos privados
+- [x] Protección de información sensible
 - [ ] Imágenes reales del negocio
 - [ ] Revisión del cliente
 - [ ] Deploy a producción

@@ -3,6 +3,9 @@ import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = () => {
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '57XXXXXXXXXX';
+  const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL || 'https://instagram.com';
+
   return (
     <section className="hero" id="hero">
       <div className="hero-background">
@@ -25,10 +28,10 @@ const Hero = () => {
             Tu mejor versión está a un paso de distancia.
           </p>
           <div className="hero-buttons">
-            <a href="https://wa.me/573215161162?text=Hola! Me gustaría agendar una cita." target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a href={`https://wa.me/${whatsappNumber}?text=Hola! Me gustaría agendar una cita.`} target="_blank" rel="noopener noreferrer" className="btn-primary">
               <FaWhatsapp /> Reserva tu Cita
             </a>
-            <a href="https://www.instagram.com/beauty_studio.cam?igsh=MXBqam9yd2Zsa2h0NQ==" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">
               <FaInstagram /> Síguenos
             </a>
           </div>
