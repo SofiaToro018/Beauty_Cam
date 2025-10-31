@@ -1,0 +1,135 @@
+.services {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, var(--white) 0%, var(--pink-light) 100%);
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(255, 143, 171, 0.15);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease-out backwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--pink-light) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 143, 171, 0.3);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: var(--pink-accent);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: var(--pink-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-description {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-features li {
+  padding: 0.5rem 0;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-icon {
+  color: var(--pink-accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.service-button {
+  background: var(--gradient);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.service-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 143, 171, 0.4);
+}
+
+@media (max-width: 968px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 4rem 1rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+}

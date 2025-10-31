@@ -1,0 +1,207 @@
+.contact {
+  padding: 6rem 2rem;
+  background: var(--white);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.contact-info {
+  animation: slideInLeft 1s ease-out;
+}
+
+.contact-info h3 {
+  font-size: 2rem;
+  color: var(--pink-dark);
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: var(--pink-accent);
+  flex-shrink: 0;
+}
+
+.info-item h4 {
+  font-size: 1.2rem;
+  color: var(--pink-dark);
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.whatsapp {
+  background: #25D366;
+  color: var(--white);
+}
+
+.whatsapp:hover {
+  background: #20BA5A;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.instagram {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+  color: var(--white);
+}
+
+.instagram:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(221, 42, 123, 0.3);
+}
+
+.map-placeholder {
+  background: var(--gradient);
+  border-radius: 15px;
+  padding: 3rem;
+  text-align: center;
+  color: var(--white);
+  margin-top: 2rem;
+}
+
+.map-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.map-placeholder p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.contact-form-wrapper {
+  animation: slideInRight 1s ease-out;
+}
+
+.contact-form-wrapper h3 {
+  font-size: 2rem;
+  color: var(--pink-dark);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  background: var(--pink-light);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--pink-medium);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--pink-accent);
+  box-shadow: 0 0 0 3px rgba(255, 143, 171, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--gradient);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 143, 171, 0.3);
+}
+
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+  }
+
+  .social-btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 4rem 1rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .contact-info h3,
+  .contact-form-wrapper h3 {
+    font-size: 1.5rem;
+  }
+}

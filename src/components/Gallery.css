@@ -1,0 +1,140 @@
+.gallery {
+  padding: 6rem 2rem;
+  background: var(--white);
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.8rem 2rem;
+  border: 2px solid var(--pink-medium);
+  background: transparent;
+  color: var(--pink-dark);
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filter-btn:hover {
+  background: var(--pink-light);
+}
+
+.filter-btn.active {
+  background: var(--gradient);
+  border-color: var(--pink-accent);
+  color: var(--white);
+  box-shadow: 0 5px 15px rgba(255, 143, 171, 0.3);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 300px;
+  animation: scaleIn 0.5s ease-out backwards;
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.gallery-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-placeholder p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 143, 171, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  padding: 2rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-item:hover .gallery-placeholder {
+  transform: scale(1.1);
+}
+
+.gallery-overlay h3 {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.view-btn {
+  background: var(--white);
+  color: var(--pink-dark);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.view-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 4rem 1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    height: 250px;
+  }
+}
